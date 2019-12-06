@@ -9,8 +9,6 @@
     {% if next %}
         {% if user.is_authenticated %}
         <p>Tu cuenta no tiene acceso a esta pagina. Para avanzar, ingresa con una cuenta que tenga acceso.</p>
-        {% else %}
-        <p>Por favor ingresa para ver esta pagina.</p>
         {% endif %}
     {% endif %}    
 
@@ -35,6 +33,8 @@
         <input type="hidden" name="next" value="{{ next }}" />
         </div>
     </form>
+    <br>
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 </div>
 {% load static %}
 <video src="{% static 'vid/star.mp4' %}"  class="blur" id="video_fondo" loop autoplay preload muted></video>
