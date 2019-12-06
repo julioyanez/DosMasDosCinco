@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#video_fondo {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1000;
+}
+
+
+.reproductor{
+    position: fixed;
+    min-width: 100%;
+    min-height: 15px;
+    bottom: 0;
+}
+
+.contenedor-imagenes{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 3px;
+    margin-top: 4%;
+}
+
+.contenedor-imagenes .imagen{
+    width: 240px;
+    position: relative;
+    height: 240px;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, .5);
+    margin: 10px;
+    border-radius: 5%;
+}
+
+.imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.overlay2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    transition: .5s ease;
+    overflow: hidden;
+}
+
+.overlay2 audio{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.reproductor:hover .overlay2{
+    height: 400%;
+    cursor: pointer;
+}
+
+
+.flecha{
+    position: absolute;
+    border: solid #FE0000;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    text-align: center;
+    bottom: 10px;
+    left: 50%;
+}
+
+.overlay2 h2{
+    color: #fff;
+    font-weight: 300;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.imagen:hover .overlay2{
+    height: 100%;
+    cursor: pointer;
+}
+
+.blur{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+
+@media screen and (max-width:1000px){
+    .contenedor-imagenes{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .contenedor-imagenes{
+        width: 90%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:450px){
+    h1{
+        font-size: 22px;
+    }
+    .contenedor-imagenes{
+        width: 98%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 95%;
+    }
+}

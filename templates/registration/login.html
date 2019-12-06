@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class=" container margen">
+
+    {% if forms.errors %}
+    <p>Tu nombre de usuario o contraseña no coinciden. Por favor intentalo otra vez.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Tu cuenta no tiene acceso a esta pagina. Para avanzar, ingresa con una cuenta que tenga acceso.</p>
+        {% else %}
+        <p>Por favor ingresa para ver esta pagina.</p>
+        {% endif %}
+    {% endif %}    
+
+    <form method="post" name="datos" action="{% url 'login' %}" onsubmit="return validarLogin()"> 
+        {% csrf_token %}
+        <h1 style="color:#FE0000">Login</h1>
+
+        <!--<input type="text" id="nick" placeholder=" NickName">
+
+        <input type="password" id="pass1" placeholder="Password">-->
+        <div>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </div>
+        <div>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </div>
+        <br>
+        <div>
+        <input type="submit" value="Submit" />
+        <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+    </form>
+</div>
+{% load static %}
+<video src="{% static 'vid/star.mp4' %}"  class="blur" id="video_fondo" loop autoplay preload muted></video>
+{% endblock %}

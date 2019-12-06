@@ -1,0 +1,61 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="contenedor-imagenes">
+    {% load static %}
+    <div class="imagen">
+        <img src="{% static 'img/1.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Nirvana.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/2.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Pink1.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/3.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Iron.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/4.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Pink.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/5.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Quin.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/6.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Radiohead.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/7.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Pearl.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/8.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Sonic.mp3')">
+            <h2>Listen</h2>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="{% static 'img/9.jpg' %}" alt=""><div class="overlay2" onclick="cambiarTema('Coldplay.mp3')">
+            <h2>Listen</h2>
+        </div>
+        </div>
+</div>
+<footer>
+    <div class="reproductor">
+            <i class="flecha"></i>
+            <div class="overlay2">
+                <audio id="repro" src="{% static 'music/Queen.mp3' %}" controls="controls" autoplay></audio>
+            </div>
+    </div>
+</footer>
+<video src="{% static 'vid/star.mp4' %}"  id="video_fondo" loop autoplay preload muted></video>
+{% endblock %}

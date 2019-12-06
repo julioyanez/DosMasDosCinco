@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>2 + 2 = 5 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>::-webkit-scrollbar{display: none;}</style>
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/layout/styles/layout.css' %}" media="all">
+    <link rel="stylesheet" href="{% static 'css/estiloRegistro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estiloMusic.css' %}">
+    <script src="{% static 'js/signup.js' %}"></script>
+    <script src="{% static 'js/music.js' %}"></script>
+</head>
+
+<body>
+  <div> 
+    <!-- ################################################################################################ -->
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear"> 
+        <!-- ################################################################################################ -->
+        <div id="logo" class="fl_left">
+            <h1><span>2 + 2 = </span><span style="color:#FE0000">5</span></h1>
+        </div>
+        <nav id="mainav" class="fl_right">
+            <ul class="clear">
+            <li><a href="{% url 'index' %}">HOME</a></li>
+            <li><a href="{% url 'music' %}">EXPLORE</a></li>
+            <li><a href="{% url 'signup' %}">SIGN UP</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            </ul>
+        <form action="#">
+            <select name="area" onChange="location = form.area.options[form.area.selectedIndex].value;">
+                <option selected="selected">MENU</option>
+                <option value="{% url 'index' %}">HOME</option>
+                <option value="{% url 'music' %}">EXPLORE</option>
+                <option value="{% url 'signup' %}">SIGNUP</option>
+                <option value="{% url 'login' %}">LOGIN</option>
+            </select>
+        </form>    
+        </nav>
+        <!-- ################################################################################################ -->
+        </header>
+    </div>
+  </div>
+
+  {% block content %}{% endblock %}
+  
+</body>
+</html>

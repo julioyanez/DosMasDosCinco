@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container margen">
+    <form method="POST" action="#" name="datos" onsubmit="return validarFormulario()">
+        <h1 style="color:#FE0000">Register</h1>
+        <input type="text" id="nick" placeholder="NickName">
+        
+        <input type="text" id="fname" placeholder="First Name">
+        
+        <input type="text" id="mail" placeholder="Email">
+
+        <input type="password" id="pass1" placeholder="Password">
+
+        <input type="password" id="pass2" placeholder="Repeat Password">   
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% load static %}
+<video src="{% static 'vid/star.mp4' %}" class="blur" id="video_fondo" loop autoplay preload muted></video>
+{% endblock %}

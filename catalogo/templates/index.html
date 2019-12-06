@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="reproductor">
+  <i class="flecha"></i>
+  <div class="overlay2">
+      {% load static %}
+      <audio src= "{% static 'music/Queen.mp3' %}" controls="controls" autoplay></audio> 
+  </div>
+</div>
+<video src="{% static 'vid/star.mp4' %}" id="video_fondo" loop autoplay preload muted></video>
+{% endblock %}
