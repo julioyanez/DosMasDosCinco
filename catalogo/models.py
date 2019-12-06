@@ -11,4 +11,4 @@ class Usuarios(models.Model):
 # pip install pillow (para poder trabajar con imagenes)
 class Imagenes(models.Model):
     id = models.IntegerField(primary_key=True)
-    imagen = models.ImageField()   
+    imagen = models.ImageField(upload_to="imagenes/")   

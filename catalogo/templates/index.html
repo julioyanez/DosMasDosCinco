@@ -1,6 +1,14 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+
+{% for i in images%}
+<div class="container margen2">
+<img src="{{ i.imagen.url }}" >
+</div>
+{% endfor %}
+
+
 <div class="reproductor">
   <i class="flecha"></i>
   <div class="overlay2">
